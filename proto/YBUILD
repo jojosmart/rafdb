@@ -1,0 +1,18 @@
+thrift_library(name = 'accord_thrift',
+               srcs = ['accord.thrift'],
+               deps = [
+                       ],
+               gen_cpp = 1,
+               gen_py = 1,
+               )
+
+
+
+thrift_library(name = 'rafdbservice_thrift',
+               srcs = ['rafdbservice.thrift'],
+                deps = [':accord_thrift',
+                      ],
+               gen_cpp = 1,
+               gen_py = 1,
+               gen_php = 1,
+               )

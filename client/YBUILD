@@ -1,0 +1,21 @@
+# Description:
+
+cc_library(name = 'rafdb_client',
+           srcs = ['rafdb_client.cc',
+                  ],
+           deps = ['//base:base',
+                   '//file:file',
+                   ':conhash_selector',
+                   '//ts/base:crawl_config',
+                   '//ts/base:util',
+                   '//storage/rafdb/proto:rafdbservice_thrift',
+                  ],
+          )
+
+cc_binary(name = 'test_client',
+          srcs = ['test_client.cc',
+                 ],
+          deps = [':rafdb_client',
+                ],
+         )
+

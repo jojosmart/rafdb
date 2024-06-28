@@ -1,0 +1,29 @@
+cc_library(name = 'rafdb',
+           srcs = ['rafdb.cc',
+                   'manager.cc',
+                   'accord.cc',
+                   'peer.cc',
+                   'sync.cc',
+                   'rafdb_sync.cc',
+                  ],
+           deps = [
+                   '//base:base',
+                   '//ts/base:crawl_config',
+                   '//file:file',
+                   '//libs/third_party/boost:boost_thread',
+                   '//storage/rafdb/proto:rafdbservice_thrift',
+                   '//libs/third_party/leveldb:leveldb',
+                   '//ts/base:util',
+                   '//libs/third_party/jsoncpp:jsoncpp',
+                  ],
+          )
+
+cc_binary(name = 'rafdb_main',
+          srcs = ['rafdb_main.cc',],
+          deps = [
+                  '//storage/rafdb:rafdb',
+                 ],
+         )
+
+
+
